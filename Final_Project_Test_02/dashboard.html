@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng điều khiển | EventHub</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- HEADER: Hệ thống điều hướng đồng nhất -->
+    <header class="main-header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="index.html">Event<span>Hub</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="events.html">Sự kiện</a></li>
+                <li><a href="calendar.html">Lịch</a></li>
+                <li><a href="dashboard.html" class="active">Bảng điều khiển</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="events.html" class="btn btn-primary">Đăng ký ngay</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <section class="dashboard-header">
+            <h1>Bảng điều khiển của tôi</h1>
+            <p>Quản lý các sự kiện bạn đã đăng ký và theo dõi lịch trình cá nhân.</p>
+        </section>
+
+        <!-- DASHBOARD STATS: Tổng quan nhanh -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>03</h3>
+                <p>Sự kiện đã đăng ký</p>
+            </div>
+            <div class="stat-card">
+                <h3>01</h3>
+                <p>Sự kiện sắp diễn ra</p>
+            </div>
+            <div class="stat-card highlight">
+                <h3>02</h3>
+                <p>Chứng chỉ đã nhận</p>
+            </div>
+        </section>
+
+        <!-- REGISTERED EVENTS TABLE: Danh sách quản lý -->
+        <section class="dashboard-main">
+            <div class="table-container">
+                <div class="table-header">
+                    <h2>Sự kiện của tôi</h2>
+                    <button class="btn btn-primary btn-sm">Tải lịch trình (.PDF)</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên sự kiện</th>
+                            <th>Ngày diễn ra</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hội thảo AI & Future 2026</strong></td>
+                            <td>25/05/2026</td>
+                            <td><span class="status-badge success">Đã xác nhận</span></td>
+                            <td>
+                                <a href="detail.html" class="action-link">Xem</a> | 
+                                <a href="#" class="action-link danger">Hủy vé</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lễ hội Âm nhạc Mùa Hè</strong></td>
+                            <td>10/06/2026</td>
+                            <td><span class="status-badge warning">Đang chờ</span></td>
+                            <td>
+                                <a href="detail.html" class="action-link">Xem</a> | 
+                                <a href="#" class="action-link danger">Hủy vé</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Marathon Vì Cộng Đồng</strong></td>
+                            <td>15/06/2026</td>
+                            <td><span class="status-badge muted">Đã kết thúc</span></td>
+                            <td>
+                                <a href="detail.html" class="action-link">Xem</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h3>EventHub</h3>
+                <p>Nền tảng quản lý sự kiện chuyên nghiệp .</p>
+            </div>
+            <p class="copyright">&copy; 2026 EventHub Project. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+    <!-- Tìm đến phần <table> và cập nhật <tbody> -->
+<tbody id="eventTableBody">
+    <!-- Dữ liệu từ JS sẽ được chèn vào đây -->
+</tbody>
+<script src="assets/js/dashboard.js"></script> 
+
+</body>
+</html>
