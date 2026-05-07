@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub | Trang Chủ Quản Lý Sự Kiện</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="index.html">Event<span>Hub</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Trang chủ</a></li>
+                <li><a href="events.html">Sự kiện</a></li>
+                <li><a href="calendar.html">Lịch</a></li>
+                <li><a href="dashboard.html">Bảng điều khiển</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button class="btn btn-primary" onclick="showLoginPopup()">Đăng nhập</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1>Khám phá các sự kiện nổi bật</h1>
+                <p>Tham gia, kết nối và trải nghiệm những khoảnh khắc tuyệt vời cùng cộng đồng EventHub.</p>
+                <div class="hero-actions">
+                    <a href="#featured" class="btn btn-white">Xem sự kiện</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured" class="featured-events container">
+            <h2 class="section-title">Sự kiện sắp tới</h2>
+            <div class="event-grid">
+                <article class="event-card">
+                    <div class="card-image" style="background-image: url('assets/images/AI-event.webp');">
+                        <span class="card-tag" style="background-color: #6366f1;">Công nghệ</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Hội thảo AI & Future 2026</h3>
+                        <p>25 Tháng 5, 2026</p>
+                    </div>
+                </article>
+                <article class="event-card">
+                    <div class="card-image" style="background-image: url('assets/images/Music event.avif');">
+                        <span class="card-tag" style="background-color: #8b5cf6;">Âm nhạc</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Lễ hội Âm nhạc Mùa Hè</h3>
+                        <p>20 Tháng 6, 2026</p>
+                    </div>
+                </article>
+                <article class="event-card">
+                    <div class="card-image" style="background-image: url('assets/images/marathon.avif');">
+                        <span class="card-tag" style="background-color: #2563eb;">Thể thao</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Marathon Thành phố 2026</h3>
+                        <p>15 Tháng 7, 2026</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h3>EventHub</h3>
+                <p>Nền tảng quản lý sự kiện chuyên nghiệp.</p>
+            </div>
+            <p class="copyright">&copy; 2026 EventHub Project. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/auth.js"></script>
+
+</body>
+</html>

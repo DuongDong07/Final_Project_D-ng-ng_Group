@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Sự Kiện | EventHub</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <body class="page-calendar"></body>
+
+    <!-- HEADER: Giống các trang trước, active tại "Lịch" -->
+    <header class="main-header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="index.html">Event<span>Hub</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="events.html">Sự kiện</a></li>
+                <li><a href="calendar.html" class="active">Lịch</a></li>
+                <li><a href="dashboard.html">Bảng điều khiển</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="events.html" class="btn btn-primary">Đăng ký ngay</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <main id="calendar-page" class="container page-content"></main>
+        <section class="calendar-header">
+            <h1>Lịch trình sự kiện</h1>
+            <p>Theo dõi các hoạt động sắp tới theo dạng lịch tháng.</p>
+            
+            <div class="calendar-controls">
+                <button class="btn-icon" id="prevMonth">&lt;</button>
+                <h2 id="monthDisplay">Tháng 05, 2026</h2>
+                <button class="btn-icon" id="nextMonth">&gt;</button>
+            </div>
+        </section>
+
+        <!-- CALENDAR GRID -->
+        <section class="calendar-wrapper">
+            <div class="calendar-grid" id="calendarGrid">
+        <!-- GHI CHÚ (LEGEND) -->
+        <div class="calendar-legend">
+            <span class="legend-item"><span class="dot event"></span> Có sự kiện</span>
+            <span class="legend-item"><span class="dot today"></span> Hôm nay</span>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h3>EventHub</h3>
+                <p>Nền tảng quản lý sự kiện chuyên nghiệp .</p>
+            </div>
+            <p class="copyright">&copy; 2026 EventHub Project.</p>
+        </div>
+    </footer>
+
+<script src="assets/js/calendar.js"></script>
+
+</body>
+</html>
