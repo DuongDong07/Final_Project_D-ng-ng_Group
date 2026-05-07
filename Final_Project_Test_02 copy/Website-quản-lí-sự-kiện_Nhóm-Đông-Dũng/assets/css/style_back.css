@@ -1,0 +1,632 @@
+:root {
+    /* Màu sắc thương hiệu */
+    --primary-color: #2563eb;
+    --secondary-color: #1e3a8a;
+    --accent-color: #f59e0b;
+    
+    /* Trạng thái */
+    --success: #10b981;
+    --error: #ef4444;
+    
+    /* Typography */
+    --font-main: 'Inter', sans-serif;
+    --h1-size: 3.5rem; /* Kích thước bạn muốn cho tiêu đề chính */
+    --p-size: 1.1rem;
+    
+    /* Spacing */
+    --section-padding: 80px 5%;
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+/* 1. KHAI BÁO BIẾN (VARIABLES) */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --white: #ffffff;
+    --bg-light: #f3f4f6;
+    
+    /* Kích thước chữ theo yêu cầu của bạn */
+    --h1-size: 4rem; 
+    --transition: all 0.3s ease;
+    --container-width: 1200px;
+}
+
+/* 2. RESET CƠ BẢN */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 3. HEADER & NAVIGATION (Flexbox) */
+.main-header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.logo span { color: var(--primary-color); }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* 4. HERO SECTION (Yêu cầu ảnh nền) */
+.hero {
+    position: relative;
+    height: 80vh; /* Chiều cao 80% màn hình */
+    display: flex;
+    align-items: center;
+    background-image: url('../images/Main-background.avif'); /* Đảm bảo bạn có file này */
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Lớp phủ làm tối ảnh để nổi bật chữ */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: var(--h1-size); /* Dùng biến để chỉnh độ to */
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+/* 5. COMPONENTS (Nút bấm, Card...) */
+.btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.btn-primary { background: var(--primary-color); color: var(--white); }
+.btn-primary:hover { background: var(--secondary-color); }
+
+.btn-white { background: var(--white); color: var(--primary-color); }
+
+/* GRID CHO SỰ KIỆN */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+/* TRANG DANH SÁCH SỰ KIỆN */
+.page-content {
+    padding: 40px 20px;
+}
+
+.events-header {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.events-header h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+/* FILTER TOOLBAR */
+.filter-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.search-box { flex: 1; }
+.search-box input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.filter-options {
+    display: flex;
+    gap: 15px;
+}
+
+.filter-options select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* EVENT CARD NÂNG CAO */
+.event-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid #eee;
+}
+
+.card-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.event-info {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.event-desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Giới hạn 2 dòng mô tả */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.btn-detail {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #f8fafc;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-detail:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+/* TRANG CHI TIẾT SỰ KIỆN */
+.detail-hero {
+    position: relative;
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+}
+
+.detail-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.detail-hero h1 {
+    font-size: 2.8rem;
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+/* BỐ CỤC GRID 2 CỘT */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Tỷ lệ 2/3 cho nội dung, 1/3 cho sidebar */
+    gap: 40px;
+    padding: 60px 20px;
+}
+
+.content-card, .sidebar-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 30px;
+}
+
+.content-card h2, .content-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.content-card p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+/* SIDEBAR FORM */
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.sidebar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-form input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.btn-full {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.info-list {
+    list-style: none;
+    padding-top: 10px;
+}
+
+.info-list li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+/* SPEAKER STYLING */
+.speaker-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: var(--bg-light);
+    border-radius: 8px;
+}
+
+.speaker-avatar {
+    width: 60px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 50%;
+}
+ 
+/* TRANG BẢNG ĐIỀU KHIỂN (DASHBOARD) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    border-bottom: 4px solid #ddd;
+}
+
+.stat-card.highlight { border-color: var(--primary-color); }
+
+.stat-card h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* TABLE STYLING */
+.table-container {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    overflow-x: auto; /* Hỗ trợ xem trên điện thoại */
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #f8fafc;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* BADGES (Trạng thái) */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status-badge.success { background: #dcfce7; color: #166534; }
+.status-badge.warning { background: #fef9c3; color: #854d0e; }
+.status-badge.muted { background: #f1f5f9; color: #475569; }
+
+.action-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.action-link.danger { color: var(--error); }
+
+.btn-sm { padding: 8px 15px; font-size: 0.85rem; }
+
+/* TRANG LỊCH (CALENDAR) */
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.btn-icon {
+    background: var(--white);
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.btn-icon:hover { background: var(--primary-color); color: white; }
+
+/* GRID LỊCH */
+.calendar-wrapper {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 cột cho 7 ngày */
+    gap: 1px;
+    background: #eee; /* Màu đường kẻ giữa các ô */
+    border: 1px solid #eee;
+}
+
+.day-name {
+    background: #f8fafc;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.day {
+    background: white;
+    min-height: 120px;
+    padding: 10px;
+    transition: var(--transition);
+}
+
+.day:not(.empty):hover {
+    background: #f0f7ff;
+    cursor: pointer;
+}
+
+.day.has-event {
+    background: #eff6ff;
+    border-top: 3px solid var(--primary-color);
+}
+
+.event-brief {
+    background: var(--primary-color);
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.calendar-legend {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.dot.event { background: var(--primary-color); }
+.dot.today { border: 2px solid var(--primary-color); }
+
+/* Trang Sự kiện */
+body.page-events {
+    background-image: url('../images/upcoming-event.webp'); /* Đảm bảo tên file chính xác */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Trang Lịch */
+body.page-calendar {
+    background-image: url('../images/Calendar01.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Trang Bảng điều khiển */
+body.page-dashboard {
+    background-image: url('../images/Dashboard.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Quan trọng: Làm cho các khung chứa nội dung trong suốt để thấy nền */
+.page-content, .container {
+    background-color: transparent !important;
+}
+
+/* Style cho ô ngày có sự kiện */
+.day.has-event {
+    background-color: #f0f4ff; /* Xanh nhạt */
+    cursor: pointer;
+    position: relative;
+}
+
+/* Dấu chấm nhỏ màu tím dưới số ngày */
+.event-marker {
+    width: 6px;
+    height: 6px;
+    background-color: #6366f1; /* Màu tím Indigo */
+    border-radius: 50%;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.day.has-event:hover {
+    background-color: #e0e7ff;
+    border: 1px solid #6366f1;
+}
+
+/* Làm cho ô ngày chứa được nội dung tên sự kiện */
+.day {
+    min-height: 100px; /* Tăng chiều cao tối thiểu cho ô lịch */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #f0f0f0;
+    vertical-align: top;
+}
+
+/* Định dạng nhãn tên sự kiện */
+.event-name-tag {
+    background-color: #b058eb; /* Màu tím */
+    color: white;
+    font-size: 10px; /* Chữ nhỏ để vừa ô */
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin-top: 4px;
+    width: 95%; /* Gần như chiếm hết chiều ngang ô */
+    text-align: center;
+    white-space: nowrap; /* Không cho xuống dòng */
+    overflow: hidden; /* Ẩn phần chữ dư */
+    text-overflow: ellipsis; /* Hiện dấu ... nếu tên quá dài */
+}
+
+/* Đổi màu nếu muốn phân biệt khi di chuột */
+.day.has-event:hover {
+    background-color: #f5f7ff;
+}
