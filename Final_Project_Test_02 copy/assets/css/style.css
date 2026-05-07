@@ -1,7 +1,7 @@
 :root {
     /* Màu sắc thương hiệu */
     --primary-color: #2563eb;
-    --secondary-color: #1e40af;
+    --secondary-color: #1e3a8a;
     --accent-color: #f59e0b;
     
     /* Trạng thái */
@@ -100,7 +100,7 @@ body {
     height: 80vh; /* Chiều cao 80% màn hình */
     display: flex;
     align-items: center;
-    background-image: url('../images/background.jpg'); /* Đảm bảo bạn có file này */
+    background-image: url('../images/Main-background.avif'); /* Đảm bảo bạn có file này */
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -544,3 +544,89 @@ th {
 .dot.event { background: var(--primary-color); }
 .dot.today { border: 2px solid var(--primary-color); }
 
+/* Trang Sự kiện */
+body.page-events {
+    background-image: url('../images/upcoming-event.webp'); /* Đảm bảo tên file chính xác */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Trang Lịch */
+body.page-calendar {
+    background-image: url('../images/Calendar01.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Trang Bảng điều khiển */
+body.page-dashboard {
+    background-image: url('../images/Dashboard.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Quan trọng: Làm cho các khung chứa nội dung trong suốt để thấy nền */
+.page-content, .container {
+    background-color: transparent !important;
+}
+
+/* Style cho ô ngày có sự kiện */
+.day.has-event {
+    background-color: #f0f4ff; /* Xanh nhạt */
+    cursor: pointer;
+    position: relative;
+}
+
+/* Dấu chấm nhỏ màu tím dưới số ngày */
+.event-marker {
+    width: 6px;
+    height: 6px;
+    background-color: #6366f1; /* Màu tím Indigo */
+    border-radius: 50%;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.day.has-event:hover {
+    background-color: #e0e7ff;
+    border: 1px solid #6366f1;
+}
+
+/* Làm cho ô ngày chứa được nội dung tên sự kiện */
+.day {
+    min-height: 100px; /* Tăng chiều cao tối thiểu cho ô lịch */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #f0f0f0;
+    vertical-align: top;
+}
+
+/* Định dạng nhãn tên sự kiện */
+.event-name-tag {
+    background-color: #b058eb; /* Màu tím */
+    color: white;
+    font-size: 10px; /* Chữ nhỏ để vừa ô */
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin-top: 4px;
+    width: 95%; /* Gần như chiếm hết chiều ngang ô */
+    text-align: center;
+    white-space: nowrap; /* Không cho xuống dòng */
+    overflow: hidden; /* Ẩn phần chữ dư */
+    text-overflow: ellipsis; /* Hiện dấu ... nếu tên quá dài */
+}
+
+/* Đổi màu nếu muốn phân biệt khi di chuột */
+.day.has-event:hover {
+    background-color: #f5f7ff;
+}
